@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="bookm.css" type="text/css" media="all">
+  </head>
+<div class="container">
+  <div class="card">
+    <h1 class="title"> Readers station  &#129294</h1>
+    <p class="subtitle"> On this page, I will show you a special box for <br>
+                    searching for any book and reading it.<br>
+                     If the book is not available, you can leave a message or suggestion<br></p>
+    
+                     <a href="bookmm.html"> <button type="button">Get Started </button></a>
+                                     
+    
+  </div>
+  <div class="blob"></div>
+</div>  
+  </div>
+<div class="results" id="results"></div>
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="bookm.css" type="text/css" media="all">
+  </head>
+  <body>
+<h1 id = "Books">My Favorite books </h1>
+<p>
+<a href = "#Hello">Go to <em>First Page</em></a>
+</p>
+
+
+
+<form>
+  <input type="text" placeholder="Search for a book " id="search-input">
+  <input type="submit" value="Search">
+</form>
+-->
+<!--
+<script>
+  const searchInput = document.getElementById('search-input');
+  const results = document.getElementById('results');
+
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value;
+
+    if (searchTerm.length >= 3) {
+      fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=5`)
+        .then(res => res.json())
+        .then(data => {
+          results.innerHTML = '';
+
+          data.items.forEach(item => {
+            const volumeInfo = item.volumeInfo;
+
+            let resultItem = document.createElement('div');
+            resultItem.classList.add('results-item');
+
+            let resultItemTitle = document.createElement('h3');
+            resultItemTitle.classList.add('results-item-title');
+            resultItemTitle.innerText = volumeInfo.title;
+
+            let resultItemAuthor = document.createElement('p');
+            resultItemAuthor.classList.add('results-item-author');
+            resultItemAuthor.innerText = volumeInfo.authors[0];
+
+            let resultItemImage = document.createElement('img');
+            resultItemImage.classList.add('results-item-image');
+            resultItemImage.src = volumeInfo.imageLinks.thumbnail;
+
+            let resultItemDescription = document.createElement('p');
+            resultItemDescription.classList.add('results-item-description');
+            resultItemDescription.innerText = volumeInfo.description;
+
+            let resultItemLink = document.createElement('a');
+            resultItemLink.classList.add('results-item-link');
+            resultItemLink.href = volumeInfo.previewLink;
+            resultItemLink.innerText = 'Read Online';
+
+            resultItem.appendChild(resultItemTitle);
+            resultItem.appendChild(resultItemAuthor);
+            resultItem.appendChild(resultItemImage);
+            resultItem.appendChild(resultItemDescription);
+            resultItem.appendChild(resultItemLink);
+
+            results.appendChild(resultItem);
+          });
+        });
+    }
+  });
+</script>
+
+
+
+
+<h4>Suggest a Book</h4>
+<form id="suggestion-form">
+    <label for="book-title">Book Title:</label>
+    <input type="text" id="book-title" name="book-title" required>
+    
+    <label for="author-name">Author Name:</label>
+    <input type="text" id="author-name" name="author-name" required>
+    
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+    
+    <button type="submit">Submit Suggestion</button>
+</form>
+<div id="thank-you-message" style="display:We Well Add Soon THANK YOU "> &#129294
+    <h2>Thank you for your suggestion!</h2>
+    <p>We will work on your suggestion shortly.</p>
+</div>
+<script src="CVJK.js"></script>
+</body>
+</html>-->

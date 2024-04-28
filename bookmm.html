@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="bookm.css" type="text/css" media="all">
+  </head>
+  <body>
+    
+<form>
+    <input type="text" placeholder="Search for a book " id="search-input">
+    <input type="submit" value="Search">
+  </form>
+  
+  <div class="results" id="results"></div>
+<script>
+    const searchInput = document.getElementById('search-input');
+    const results = document.getElementById('results');
+  
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value;
+  
+      if (searchTerm.length >= 3) {
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=5`)
+          .then(res => res.json())
+          .then(data => {
+            results.innerHTML = '';
+  
+            data.items.forEach(item => {
+              const volumeInfo = item.volumeInfo;
+  
+              let resultItem = document.createElement('div');
+              resultItem.classList.add('results-item');
+  
+              let resultItemTitle = document.createElement('h3');
+              resultItemTitle.classList.add('results-item-title');
+              resultItemTitle.innerText = volumeInfo.title;
+  
+              let resultItemAuthor = document.createElement('p');
+              resultItemAuthor.classList.add('results-item-author');
+              resultItemAuthor.innerText = volumeInfo.authors[0];
+  
+              let resultItemImage = document.createElement('img');
+              resultItemImage.classList.add('results-item-image');
+              resultItemImage.src = volumeInfo.imageLinks.thumbnail;
+  
+              let resultItemDescription = document.createElement('p');
+              resultItemDescription.classList.add('results-item-description');
+              resultItemDescription.innerText = volumeInfo.description;
+  
+              let resultItemLink = document.createElement('a');
+              resultItemLink.classList.add('results-item-link');
+              resultItemLink.href = volumeInfo.previewLink;
+              resultItemLink.innerText = 'Read Online';
+  
+              resultItem.appendChild(resultItemTitle);
+              resultItem.appendChild(resultItemAuthor);
+              resultItem.appendChild(resultItemImage);
+              resultItem.appendChild(resultItemDescription);
+              resultItem.appendChild(resultItemLink);
+  
+              results.appendChild(resultItem);
+            });
+          });
+      }
+    });
+  </script>
+   <p>If you don't find what you're looking for, click Go</p>
+   <a href="bookmmm.html"> <button type="button">Go </button></a>
+ 
+
+  <!--
+  <p>
+  <h1 id = "Books">go for more  </h1></p>
+  <p>
+  <a href = "#Hello">Go to <em>back</em></a>
+  </p>
+ 
+  
+ 
+  <h4>Suggest a Book : </h4>
+  <br>
+    <form id="suggestion-form">
+      <label for="book-title">Book Title:</label>
+      <input type="text" id="book-title" name="book-title" required>
+      <br>
+      <label for="author-name">Author Name:</label>
+      <input type="text" id="author-name" name="author-name" required>
+      <br>
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" rows="7" cols="50"></textarea>
+      <br>
+      <button type="submit">Submit Suggestion</button>
+  </form>
+  <br>
+  <div id="thank-you-message" style="display:We Well Add Soon THANK YOU "> <br>&#129294
+     <br> <h2>Thank you for your suggestion!</h2>
+      <p>We will work on your suggestion shortly.</p>
+  </div>
+ 
+<p>
+  <h1 id = "Hello">The Best BOOKS of the Internet</h1>
+</p>
+ <p><a href = "#Books">Go to <em>Favorite Books</em></a></p>
+<script src="CVJK.js"></script> -->
+  </body>
+  </html>
+  
